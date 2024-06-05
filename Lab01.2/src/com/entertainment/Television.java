@@ -2,13 +2,13 @@ package com.entertainment;
 
 import java.util.Objects;
 
-public class Television {
+public class Television implements Comparable<Television>{
 
     private String brand;
     private int volume;
 
     private final Tuner tuner = new Tuner();
-//    You can instatuate a class inside anither object
+//    You can instatiate a class inside anither object
 
 
     public Television(){
@@ -67,12 +67,18 @@ public class Television {
         return result;
     }
 
+
+    @Override
+    public int compareTo(Television other) {
+        return this.getBrand().compareTo(other.getBrand());
+    }
+
     @Override
     public String toString() {
         return "Television{" +
-                "brand='" + brand + '\'' +
-                ", volume=" + volume +
-                ", tuner=" + tuner +
+                "brand='" + getBrand() + '\'' +
+                ", volume=" + getVolume() +
+                ", channel=" + getCurrentChannel() +
                 '}';
     }
 }
