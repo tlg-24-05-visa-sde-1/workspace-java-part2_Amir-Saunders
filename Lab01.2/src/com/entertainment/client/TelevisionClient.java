@@ -1,8 +1,9 @@
-package client;
+package com.entertainment.client;
 
 import com.entertainment.Television;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -31,7 +32,7 @@ public class TelevisionClient {
         tvs.add(tvB);
         tvs.add(tvC);
         tvs.add(tvD);
-        System.out.println(tvs.size());
+        System.out.println( "The size of the Set is " + tvs.size());
 
 
         for(Television tv : tvs){

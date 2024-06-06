@@ -44,25 +44,29 @@ public class Television implements Comparable<Television>{
         this.volume = volume;
     }
 
-    
-    public  int hashcode(){
+    @Override
+    public  int hashCode (){
 
 //        return getBrand().length() + getVolume();
         return Objects.hash(getBrand(), getVolume());
     }
 
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(Object obj) {
         System.out.println();
         boolean result = false;
 
-        if(obj instanceof Television){
+//        if(obj instanceof Television){
+//        Is-A check above
+        if (this.getClass() == obj.getClass()) {
+
             Television other = (Television) obj;
+
 //            result = this.getBrand().equals(other.getBrand()) &&
 //                    this.getVolume() == other.getVolume();
 
-            result = Objects.equals(this.getBrand(),other.getBrand()) &&
-                    this.getVolume() == other.getVolume();
+        result = Objects.equals(this.getBrand(), other.getBrand()) &&
+                this.getVolume() == other.getVolume();
         }
         return result;
     }
@@ -70,7 +74,12 @@ public class Television implements Comparable<Television>{
 
     @Override
     public int compareTo(Television other) {
-        return this.getBrand().compareTo(other.getBrand());
+//        return this.getBrand().compareTo(other.getBrand());
+        int result = this.getBrand().compareTo(other.getBrand());
+        if(result == 0){
+            result = Integer.compare(this.getVolume(), other.getVolume());
+        }
+        return result;
     }
 
     @Override

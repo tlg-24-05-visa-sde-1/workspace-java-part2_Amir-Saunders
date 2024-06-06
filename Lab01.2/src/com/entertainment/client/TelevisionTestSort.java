@@ -6,7 +6,7 @@
  * We hope that it's useful to you.  Enjoy.
  * Copyright LearningPatterns Inc.
  */
-package client;
+package com.entertainment.client;
 
 import java.util.Arrays;
 import java.util.List;
