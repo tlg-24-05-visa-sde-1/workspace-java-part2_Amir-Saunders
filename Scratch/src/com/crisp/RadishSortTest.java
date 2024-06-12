@@ -1,6 +1,7 @@
 package com.crisp;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class RadishSortTest {
@@ -24,11 +25,37 @@ public class RadishSortTest {
         radishes.sort(new RadishColorComaprator());
        /*When you use this we're instatiating the RadsishColorCaparator which extends comparator. when you sort using  new RadishColorComaprator() with a list it automatiaclly calls the compare method inside radishcolorcomaprator*/
 
+        System.out.println("sort by guys on top");
+        radishes.sort(new Comparator<Radish>() {
+            @Override
+            public int compare(Radish r1, Radish r2) {
+                return Integer.compare(r1.getGuysOnTop(), r2.getGuysOnTop());
+            }
+        });
 
         //        Sort by radish guysOnTop using radishcolorcomaprator class below
+        System.out.println(" sort vua color");
+        radishes.sort(new Comparator<Radish>() {
+            @Override
+            public int compare(Radish r1, Radish r2) {
+                return r1.getColor().compareTo(r2.getColor());
+            }
+        });
         radishes.sort(new RadishGuysOnTopComparator());
         dump(radishes);
+
+        radishes.sort(new Comparator<Radish>() {
+
+            @Override
+            public int compare(Radish r1, Radish r2) {
+                return Double.compare(r1.getTailLength(),r2.getTailLength());
+            }
+        });
+        dump(radishes);
     }
+
+
+
 
     private static void dump(List<Radish> radishList) {
         for(Radish radish : radishList){
