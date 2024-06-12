@@ -1,10 +1,11 @@
 package com.duckrace;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
-public class DuckRacer {
+public class DuckRacer implements Serializable {
 
     private final int id;
     private String name;
