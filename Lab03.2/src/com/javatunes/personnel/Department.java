@@ -25,15 +25,17 @@ public class Department {
     }
 
     public void listEmployees() {
-        for (Employee emp : employees) {
-            System.out.println(emp);
-        }
+        employees.forEach(employee -> System.out.println(employee));
+//        for (Employee emp : employees) {
+//            System.out.println(emp);
+//        }
     }
 
     public void workEmployees() {
-        for (Employee emp : employees) {
-            emp.work();
-        }
+        employees.forEach(employee -> employee.work());
+//        for (Employee emp : employees) {
+//            emp.work();
+//        }
     }
 
     /**
@@ -42,9 +44,10 @@ public class Department {
      */
     public void payEmployees() {
         // DONE
-        for (Employee emp : employees) {
-            emp.pay();
-        }
+        employees.forEach(employee -> employee.pay());
+//        for (Employee emp : employees) {
+//            emp.pay();
+//        }
     }
 
     // helper method to add an Employee to the collection
