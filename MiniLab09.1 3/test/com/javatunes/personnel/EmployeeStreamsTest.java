@@ -195,12 +195,12 @@ public class EmployeeStreamsTest {
      * The result is always Map<Boolean,List<Employee>>
      */
     @Test
-    public void twoGroups_atLeast50K_lessThan50K() {
-        Map<Boolean,List<Employee> map = allEmployees.stream()
-                .collect(Collectors.partitioningBy(emp -> emp.getSalary() >= 50_000.0));
-
-        dump(map);
-    }
+//    public void twoGroups_atLeast50K_lessThan50K() {
+//        Map<Boolean,List<Employee> map = allEmployees.stream()
+//                .collect(Collectors.partitioningBy(emp -> emp.getSalary() >= 50_000.0));
+//
+//        dump(map);
+//    }
 
     /**
      * TASK: group our Employees by year of hire
